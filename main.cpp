@@ -1,25 +1,66 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/* 
- * File:   main.cpp
- * Author: ttackett
- *
- * Created on September 25, 2017, 2:42 PM
- */
-
-#include <cstdlib>
+#include <iostream>
+#include <string>
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+class ShopItemOrder {
+public:
+    
+    ShopItemOrder()
+    {
+        
+    }
+    
+    void setName(string Name){
+        this->name = Name; 
+    }
+    
+    string getName(){
+           return name; 
+    }
+    
+    void setPrice(double Price){
+        this->price = Price;  
+    }
+    
+    double getPrice(){
+        return price;  
+    }
+    
+    void setOrders(int Items){;
+        this->itemsOrdered = Items;
+    }
+    
+    int getOrders(){
+        return itemsOrdered; 
+    }
+    
+    void thankYou(){
+        cout << "You're order of " << name << " cost " << price << std::endl;
+        cout << "You're total price is " << totalPrice;
+    }
+    
+    double total()
+    {
+       totalPrice = totalPrice + price; 
+    }
+    
+private:
+    double totalPrice;
+    int itemsOrdered;
+    double price;
+    string name;
+};
 
-    return 0;
+int main(void) {
+    ShopItemOrder Order1;
+    
+    Order1.setOrders(1);
+    Order1.setName("Pickle");
+    Order1.setPrice(1.15);
+    Order1.total();
+    
+    Order1.thankYou();
+    
 }
 
